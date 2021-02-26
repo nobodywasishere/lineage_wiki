@@ -35,7 +35,7 @@
 
         {% if device.screen != 'None' %}
         <tr>
-            <th scope="row" colspan="2">Display</th>
+            <th id="Display" scope="row" colspan="2">Display</th>
         </tr>
 
         <tr>
@@ -54,7 +54,7 @@
         {% endif %}
 
         <tr>
-            <th scope="row" colspan="2">Platform</th>
+            <th id="Platform" scope="row" colspan="2">Platform</th>
         </tr>
 
         <tr>
@@ -94,6 +94,20 @@
             <th scope="row">GPU</th>
             <td>{{ device.gpu }}</td>
         </tr>
+        
+        {% if device.ram %}
+        <tr>
+            <th scope="row">RAM</th>
+            <td>{{ device.ram }}</td>
+        </tr>
+        {% endif %}
+
+        {% if device.storage %}
+        <tr>
+            <th scope="row">Storage</th>
+            <td>{{ device.storage }}</td>
+        </tr>
+        {% endif %}
 
         <tr>
             <th scope="row">Architecture</th>
@@ -109,7 +123,7 @@
 
 
         <tr>
-            <th scope="row" colspan="2">Hardware</th>
+            <th id="Hardware" scope="row" colspan="2">Hardware</th>
         </tr>
 
         {% if device.height and device.width and device.depth %}
@@ -160,23 +174,8 @@
             </tr>
         {% endif %}
 
-        {% if device.ram %}
         <tr>
-            <th scope="row">RAM</th>
-            <td>{{ device.ram }}</td>
-        </tr>
-        {% endif %}
-
-        {% if device.storage %}
-        <tr>
-            <th scope="row">Storage</th>
-            <td>{{ device.storage }}</td>
-        </tr>
-        {% endif %}
-
-
-        <tr>
-            <th scope="row" colspan="2">Connectivity</th>
+            <th id="Connectivity" scope="row" colspan="2">Connectivity</th>
         </tr>
 
         {% if device.wifi %}
@@ -246,7 +245,7 @@
 
         {% if device.maintainers != empty %}
         <tr>
-            <th scope="row" colspan="2">LineageOS Info</th>
+            <th id="LineageOS Info" scope="row" colspan="2">LineageOS Info</th>
         </tr>
             <tr>
                 <th scope="row">Maintainers</th>
